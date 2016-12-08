@@ -12,9 +12,20 @@ namespace WindowsFormsApplication1
 {
     public partial class Form1 : Form
     {
+        
+
+        public DataGridView dgv;
+
         public Form1()
         {
             InitializeComponent();
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Employee emp = new Employee();
+            emp.CreateEmployeeList();
         }
     }
 }
