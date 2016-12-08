@@ -33,12 +33,12 @@ namespace WindowsFormsApplication1
            for (int i = 0; i < 10000; i++)
             {
                 Employee emp = new Employee(randomID(), randomFirst(), randomLast(), randomSalary());
-                DataGridViewRow row = (DataGridViewRow)dgv.Rows[i].Clone();
-                row.Cells[0].Value = emp.ID;
-                row.Cells[1].Value = emp.firstName;
-                row.Cells[2].Value = emp.lastName;
-                row.Cells[3].Value = emp.salary;
-                dgv.Rows.Add(row);
+                //DataGridViewRow row = (DataGridViewRow)dgv.Rows[i].Clone();
+                //row.Cells[0].Value = emp.ID;
+                //row.Cells[1].Value = emp.firstName;
+                //row.Cells[2].Value = emp.lastName;
+                //row.Cells[3].Value = emp.salary;
+                //dgv.Rows.Add(row);
             }
 
         }

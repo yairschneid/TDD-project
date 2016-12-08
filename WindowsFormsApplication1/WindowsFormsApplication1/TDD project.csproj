@@ -49,6 +49,7 @@
     <Compile Include="Employee.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="Employee2.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
