@@ -11,13 +11,13 @@ using System.Windows.Forms;
 
 namespace WindowsFormsApplication1
 {
-    public partial class Form1 : Form
+    public partial class Main : Form
     {
 
         List<Employee2> employees;
         Boolean sorted;
         Stopwatch stopwatch;
-        public Form1()
+        public Main()
         {
             InitializeComponent();
             employees = new List<Employee2>();
