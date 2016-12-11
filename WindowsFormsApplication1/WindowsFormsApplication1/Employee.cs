@@ -23,7 +23,7 @@ namespace WindowsFormsApplication1
       
         public Employee()
         {
-            InitializeComponent();
+            //InitializeComponent();
           //  this.dgv = new DataGridView();
           //  dgv.Columns.Add("ID", "ID");
           //  dgv.Columns.Add("firstName", "First Name");
