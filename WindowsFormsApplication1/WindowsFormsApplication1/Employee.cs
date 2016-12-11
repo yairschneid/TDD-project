@@ -45,20 +45,19 @@ namespace WindowsFormsApplication1
             this.firstName = firstName;
             this.lastName = lastName;
             this.salary = salary;
-            
+
         }
 
         public void CreateEmployeeList()
         {
             for (int i = 1; i < 10000; i++)
             {
-                // Employee emp = new Employee(randomID(), randomFirst(), randomLast(), randomSalary());
-                // DataGridViewRow row = dgv.Rows.Add();
-                  dataGridView1.Rows.Add(randomID(), randomFirst(), randomLast(), randomSalary());
-                // row.Cells[0].Value = randomID();
-                // row.Cells[1].Value = randomFirst();
-                // row.Cells[2].Value = randomLast();
-                // row.Cells[3].Value = randomSalary();
+                Employee emp = new Employee(randomID(), randomFirst(), randomLast(), randomSalary());
+                //DataGridViewRow row = (DataGridViewRow)dgv.Rows[i].Clone();
+                //row.Cells[0].Value = emp.ID;
+                //row.Cells[1].Value = emp.firstName;
+                //row.Cells[2].Value = emp.lastName;
+                //row.Cells[3].Value = emp.salary;
                 //dgv.Rows.Add(row);
             }
 
