@@ -102,7 +102,7 @@
             // 
             this.sort_bubble_bt.Location = new System.Drawing.Point(236, 29);
             this.sort_bubble_bt.Name = "sort_bubble_bt";
-            this.sort_bubble_bt.Size = new System.Drawing.Size(75, 23);
+            this.sort_bubble_bt.Size = new System.Drawing.Size(94, 23);
             this.sort_bubble_bt.TabIndex = 3;
             this.sort_bubble_bt.Text = "bubble sort me";
             this.sort_bubble_bt.UseVisualStyleBackColor = true;
