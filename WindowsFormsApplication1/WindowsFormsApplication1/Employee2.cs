@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace WindowsFormsApplication1
 {
-    class Employee2
+    public class Employee2
     {
         public int ID;
         public string firstName;
@@ -22,7 +22,15 @@ namespace WindowsFormsApplication1
             ID = random.Next(111111111, 999999999);
             firstName = firstNames[random.Next(0, firstNames.Length)];
             lastName = lastNames[random.Next(0, lastNames.Length)];
-            salary = random.Next(0, 1000000);
+            salary = random.Next(3000, 15000);
+        }
+
+        public Employee2(int salary)
+        {
+            ID = random.Next(111111111, 999999999);
+            firstName = firstNames[random.Next(0, firstNames.Length)];
+            lastName = lastNames[random.Next(0, lastNames.Length)];
+            this.salary = salary;
         }
     }
 }

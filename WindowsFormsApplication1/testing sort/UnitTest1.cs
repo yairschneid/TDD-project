@@ -1,6 +1,7 @@
 ﻿using System;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using WindowsFormsApplication1;
+using System.Collections.Generic;
 
 namespace testing_sort
 {
@@ -8,12 +9,34 @@ namespace testing_sort
     public class UnitTest1
     {
         public Main main;
+        public List<Employee2> scrambled;
+        public List<Employee2> sorted;
+        [TestInitialize]
+        public void Initialize() {
+            main = new Main();
+            scrambled = new List<Employee2>();
+            sorted = new List<Employee2>();
+        }
+
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod2()
         {
-            Assert.AreEqual(mysort(new int[] { 1, 3, 2 }), new int[] { 1, 2, 3 });
-            Assert.AreEqual(4 + 4, 8);
+
+            Employee2 em1 = new Employee2(10000);
+            Employee2 em2 = new Employee2(5000);
+
+            scrambled.Add(em1);
+            scrambled.Add(em2);
+
+            sorted.Add(em1);
+            sorted.Add(em2);
+            
+            CollectionAssert.AreEqual( main.sort_list (scrambled), sorted);
+            
+           
+
         }
+        
     }
 }

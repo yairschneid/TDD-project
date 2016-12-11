@@ -15,20 +15,21 @@ namespace WindowsFormsApplication1
     {
 
         List<Employee2> employees;
-        Boolean sorted;
+        List<Employee2> sorted;
+        Boolean isSorted;
         Stopwatch stopwatch;
         public Main()
         {
             InitializeComponent();
             employees = new List<Employee2>();
-            sorted = false;
+            isSorted = false;
 
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //Employee emp = new Employee();
-            //emp.CreateEmployeeList();
+            
+            
             Employee2 emp;
             stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -63,15 +64,19 @@ namespace WindowsFormsApplication1
 
         public void sort_bubble_bt_Click(object sender, EventArgs e)
         {
-            //List<Employee2> sorted = sort_list(employees);
-            //semployees_to_grid(sorted);
+            
+            sorted = sort_list(employees);
+            employees_to_grid(sorted);
+            
         }
-        /*
+        
         public List<Employee2> sort_list(List<Employee2> employees)
         {
-            employees.Reverse();
+
+            //employees.Reverse();
             return employees;
         }
-        */
+
+        
     }
 }

@@ -115,7 +115,7 @@
             this.timer_lb.Name = "timer_lb";
             this.timer_lb.Size = new System.Drawing.Size(61, 13);
             this.timer_lb.TabIndex = 4;
-            this.timer_lb.Text = "01 : 00 : 00";
+            this.timer_lb.Text = "00 : 00 : 00";
             // 
             // Main
             // 
