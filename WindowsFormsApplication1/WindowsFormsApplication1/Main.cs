@@ -61,16 +61,17 @@ namespace WindowsFormsApplication1
             this.Close();
         }
 
-        private void sort_bubble_bt_Click(object sender, EventArgs e)
+        public void sort_bubble_bt_Click(object sender, EventArgs e)
         {
-            List<Employee2> sorted = sort_list(employees);
-            employees_to_grid(sorted);
+            //List<Employee2> sorted = sort_list(employees);
+            //semployees_to_grid(sorted);
         }
-
-        private List<Employee2> sort_list(List<Employee2> employees)
+        /*
+        public List<Employee2> sort_list(List<Employee2> employees)
         {
             employees.Reverse();
             return employees;
         }
+        */
     }
 }
