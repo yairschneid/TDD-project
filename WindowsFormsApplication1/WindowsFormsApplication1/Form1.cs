@@ -42,7 +42,7 @@ namespace WindowsFormsApplication1
             
             employees_to_grid(employees);
             stopwatch.Stop();
-            timer_lb.Text = stopwatch.Elapsed.ToString();
+            timer_lb.Text = stopwatch.Elapsed.ToString() + "!";
         }
 
         private void employees_to_grid(List<Employee2> employees)
