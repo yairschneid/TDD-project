@@ -32,6 +32,129 @@ namespace testing_sort
         }
 
         #region merge sort
+        [TestMethod()]
+        public void merge_sort_5_middle_elements_test()
+        {
+            scrambled.Add(em7);
+            scrambled.Add(em4);
+            scrambled.Add(em5);
+            scrambled.Add(em2);
+            scrambled.Add(em6);
+            
+            //scrambled now contains: [14000, 7890, 10000, 4000, 12345]
+
+            sorted.Add(em2);
+            sorted.Add(em4);
+            sorted.Add(em5);
+            sorted.Add(em6);
+            sorted.Add(em7);
+            //sorted now contains: [4000, 7890, 10000, 12345, 14000]
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+        [TestMethod()]
+        public void merge_sort_not_null_test()
+        {
+            scrambled.Add(em4);
+            Assert.IsNotNull(main.myMergeSort(scrambled));
+        }
+
+        [TestMethod()]
+        public void merge_sort_no_lost_test()
+        {
+            scrambled.Add(em4);
+            scrambled.Add(em5);
+            scrambled.Add(em2);
+            scrambled.Add(em6);
+
+            Assert.AreEqual(main.myMergeSort(scrambled).Count, 4);
+        }
+
+        [TestMethod()]
+        public void merge_sort_lower_bound_test()
+        {
+            scrambled.Add(em4);
+            scrambled.Add(em5);
+            scrambled.Add(em1);
+            //scrambled now contains: [7890, 10000, 3000]
+
+            sorted.Add(em1);
+            sorted.Add(em4);
+            sorted.Add(em5);
+            //sorted now contains: [3000, 7890, 10000]
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+        [TestMethod()]
+        public void merge_sort_upper_bound_test()
+        {
+            scrambled.Add(em9);
+            scrambled.Add(em5);
+            scrambled.Add(em4);
+            //scrambled now contains: [15000, 10000, 7890]
+
+            sorted.Add(em4);
+            sorted.Add(em5);
+            sorted.Add(em9);
+            //sorted now contains: [7890, 10000, 15000]
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+        [TestMethod()]
+        public void merge_sort_both_bounds_test()
+        {
+            scrambled.Add(em1);
+            scrambled.Add(em9);
+            scrambled.Add(em5);
+            scrambled.Add(em4);
+            //scrambled now contains: [3000, 15000, 10000, 7890]
+
+            sorted.Add(em1);
+            sorted.Add(em4);
+            sorted.Add(em5);
+            sorted.Add(em9);
+            //sorted now contains: [3000, 7890, 10000, 15000]
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+        [TestMethod()]
+        public void merge_sort_2_exact_test()
+        {
+            scrambled.Add(em5);
+            scrambled.Add(em5);
+            scrambled.Add(em1);
+            //scrambled now contains: [10000, 10000, 3000]
+
+            sorted.Add(em1);
+            sorted.Add(em5);
+            sorted.Add(em5);
+            //sorted now contains: [3000, 10000, 1000]
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+        [TestMethod()]
+        public void merge_sort_3_exact_test()
+        {
+            scrambled.Add(em5);
+            scrambled.Add(em5);
+            scrambled.Add(em5);
+            scrambled.Add(em1);
+
+            //scrambled now contains: [10000, 10000, 10000, 3000]
+
+            sorted.Add(em1);
+            sorted.Add(em5);
+            sorted.Add(em5);
+            sorted.Add(em5);
+            //sorted now contains: [3000, 10000, 10000, 10000]
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
         #endregion
 
         #region bubble sort

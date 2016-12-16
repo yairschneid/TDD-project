@@ -56,6 +56,7 @@
             this.salary});
             this.dataGridView1.Location = new System.Drawing.Point(76, 99);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.Size = new System.Drawing.Size(780, 342);
             this.dataGridView1.TabIndex = 0;
             // 
@@ -63,21 +64,25 @@
             // 
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             // 
             // firstName
             // 
             this.firstName.HeaderText = "First Name";
             this.firstName.Name = "firstName";
+            this.firstName.ReadOnly = true;
             // 
             // lastName
             // 
             this.lastName.HeaderText = "Last Name";
             this.lastName.Name = "lastName";
+            this.lastName.ReadOnly = true;
             // 
             // salary
             // 
             this.salary.HeaderText = "Salary";
             this.salary.Name = "salary";
+            this.salary.ReadOnly = true;
             // 
             // button1
             // 
