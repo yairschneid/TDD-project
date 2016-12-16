@@ -37,6 +37,7 @@
             this.exit_bt = new System.Windows.Forms.Button();
             this.sort_bubble_bt = new System.Windows.Forms.Button();
             this.timer_lb = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -102,7 +103,7 @@
             // 
             this.sort_bubble_bt.Location = new System.Drawing.Point(236, 29);
             this.sort_bubble_bt.Name = "sort_bubble_bt";
-            this.sort_bubble_bt.Size = new System.Drawing.Size(75, 23);
+            this.sort_bubble_bt.Size = new System.Drawing.Size(137, 23);
             this.sort_bubble_bt.TabIndex = 3;
             this.sort_bubble_bt.Text = "bubble sort";
             this.sort_bubble_bt.UseVisualStyleBackColor = true;
@@ -111,17 +112,28 @@
             // timer_lb
             // 
             this.timer_lb.AutoSize = true;
-            this.timer_lb.Location = new System.Drawing.Point(596, 38);
+            this.timer_lb.Location = new System.Drawing.Point(73, 73);
             this.timer_lb.Name = "timer_lb";
-            this.timer_lb.Size = new System.Drawing.Size(61, 13);
+            this.timer_lb.Size = new System.Drawing.Size(38, 13);
             this.timer_lb.TabIndex = 4;
-            this.timer_lb.Text = "00 : 00 : 00";
+            this.timer_lb.Text = "<time>";
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(416, 29);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(137, 23);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "merge sort";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 663);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.timer_lb);
             this.Controls.Add(this.sort_bubble_bt);
             this.Controls.Add(this.exit_bt);
@@ -146,6 +158,7 @@
         private System.Windows.Forms.Button exit_bt;
         private System.Windows.Forms.Button sort_bubble_bt;
         private System.Windows.Forms.Label timer_lb;
+        private System.Windows.Forms.Button button2;
     }
 }
 
