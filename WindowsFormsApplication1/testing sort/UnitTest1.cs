@@ -248,11 +248,11 @@ namespace testing_sort
         }
 
         [TestMethod()]
-        public void bubble_sort_2_exact_test()
+        public void bubble_sort_3_exact_test()
         {
             scrambled.Add(em5);
-            scrambled.Add(em5);
             scrambled.Add(em1);
+            scrambled.Add(em5);
             //scrambled now contains: [10000, 10000, 3000]
 
             sorted.Add(em1);
