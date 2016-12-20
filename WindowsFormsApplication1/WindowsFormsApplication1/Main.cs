@@ -28,6 +28,21 @@ namespace WindowsFormsApplication1
 
         }
 
+        private void employees_to_grid(List<Employee2> employees)
+        {
+            dataGridView1.Rows.Clear();
+            for (int i = 0; i < employees.Count; i++)
+            {
+                Employee2 emp = employees[i];
+                string[] row = new string[] { emp.ID.ToString(), emp.firstName, emp.lastName, emp.salary.ToString() };
+                dataGridView1.Rows.Add(row);
+            }
+        }
+        private void exit_bt_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         private void button1_Click(object sender, EventArgs e)
         {
             Employee2 emp;
@@ -47,24 +62,8 @@ namespace WindowsFormsApplication1
             }
             stopwatch.Stop();
             employees_to_grid(employees);
-
-            timer_lb.Text = "time to create employees list: " + stopwatch.Elapsed.ToString();
-        }
-
-        private void employees_to_grid(List<Employee2> employees)
-        {
-            dataGridView1.Rows.Clear();
-            for (int i = 0; i < employees.Count; i++)
-            {
-                Employee2 emp = employees[i];
-                string[] row = new string[] { emp.ID.ToString(), emp.firstName, emp.lastName, emp.salary.ToString() };
-                dataGridView1.Rows.Add(row);
-            }
-        }
-
-        private void exit_bt_Click(object sender, EventArgs e)
-        {
-            this.Close();
+            
+            timer_lb.Text = "time to create employees list: " + stopwatch.Elapsed.TotalMilliseconds + " ms";
         }
 
         public void sort_bubble_bt_Click(object sender, EventArgs e)
@@ -80,7 +79,7 @@ namespace WindowsFormsApplication1
             stopwatch.Stop();
 
             employees_to_grid(sorted);
-            timer_lb.Text = "time to sort all employees USING BUBBLE SORT O(N*N): " + stopwatch.Elapsed.ToString();
+            timer_lb.Text = "time to create employees list: " + stopwatch.Elapsed.TotalMilliseconds + " ms";
         }
         public List<Employee2> myBubbleSort(List<Employee2> unsortedEmployees)
         {
@@ -116,8 +115,8 @@ namespace WindowsFormsApplication1
             unsortedEmployees[j] = unsortedEmployees[j + 1];
             unsortedEmployees[j + 1] = e;
         }
-        /* 
-         * swap elemnts v2:
+        /* swap elemnts v2:
+         * 
          *  error was using "remove at" and "insert" which were expensive O(n) actions
          * 
          * 
@@ -129,7 +128,6 @@ namespace WindowsFormsApplication1
         }
         *
         */
-
         /* swap elements v1:
         * 
         * previous version error:
@@ -157,9 +155,8 @@ namespace WindowsFormsApplication1
             stopwatch.Stop();
 
             employees_to_grid(sorted);
-            timer_lb.Text = "time to sort all employees USING Merge SORT O(N*log(N)): " + stopwatch.Elapsed.ToString();
+            timer_lb.Text = "time to create employees list: " + stopwatch.Elapsed.TotalMilliseconds + " ms";
         }
-
         public List<Employee2> myMergeSort(List<Employee2> unsortedEmployees)
         {
             if (unsortedEmployees.Count > 1)
@@ -167,7 +164,6 @@ namespace WindowsFormsApplication1
 
             return unsortedEmployees;
         }
-
         /* myMergeSort v1
          * 
          * error: the amount used was the constant "employee number" (100"
@@ -181,9 +177,6 @@ namespace WindowsFormsApplication1
         }
 
         */
-
-
-
         private void mergeSortList(List<Employee2> unsortedEmployees, int leftIndex, int rightIndex)
         {
             int mid;
@@ -236,17 +229,6 @@ namespace WindowsFormsApplication1
 
 
         }
-
-        private void revert_bt_Click(object sender, EventArgs e)
-        {
-            if (employees.Count == 0)
-            {
-                MessageBox.Show("please create employees database first");
-                return;
-            }
-            employees_to_grid(employees);
-        }
-
         /* mergeSubLists v1
          *  
          * 
@@ -332,8 +314,15 @@ namespace WindowsFormsApplication1
         }
         */
 
-
-
-
+        private void revert_bt_Click(object sender, EventArgs e)
+        {
+            if (employees.Count == 0)
+            {
+                MessageBox.Show("please create employees database first");
+                return;
+            }
+            employees_to_grid(employees);
+        }
+        
     }
 }
