@@ -32,6 +32,40 @@ namespace testing_sort
         }
 
         #region merge sort
+
+        [TestMethod()]
+        public void merge_sort_0_elements()
+        {
+            //we are not sending any value(employee) to the lists
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+        [TestMethod()]
+        public void merge_sort_one_element()
+        {
+            scrambled.Add(em4);
+            //scrembled contains one value - 7890
+
+            sorted.Add(em4);
+            //sorted contains one value - 7890
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+        public void merge_sort_two_elements()
+        {
+            scrambled.Add(em8);
+            scrambled.Add(em6);
+            //scrambled now contains: [14000, 12345]
+
+            scrambled.Add(em6);
+            scrambled.Add(em8);
+            //sorted now contains: [14000, 12345]
+
+            CollectionAssert.AreEqual(main.myMergeSort(scrambled), sorted);
+        }
+
+
         [TestMethod()]
         public void merge_sort_5_middle_elements_test()
         {
@@ -197,6 +231,39 @@ namespace testing_sort
             CollectionAssert.AreEqual( main.myBubbleSort(scrambled), sorted);
         }
 
+        public void bubble_sort_0_elements()
+        {
+            //we are not sending any value(employee) to the lists
+            CollectionAssert.AreEqual(main.myBubbleSort(scrambled), sorted);
+        }
+
+        [TestMethod()]
+        public void bubble_sort_one_element()
+        {
+            scrambled.Add(em4);
+            //scrembled contains one value - 7890
+
+            sorted.Add(em4);
+            //sorted contains one value - 7890
+
+            CollectionAssert.AreEqual(main.myBubbleSort(scrambled), sorted);
+
+        }
+
+        public void bubble_sort_two_elements()
+        {
+            scrambled.Add(em8);
+            scrambled.Add(em6);
+            //scrambled now contains: [14000, 12345]
+
+            scrambled.Add(em6);
+            scrambled.Add(em8);
+            //sorted now contains: [14000, 12345]
+
+            CollectionAssert.AreEqual(main.myBubbleSort(scrambled), sorted);
+
+        }
+
         [TestMethod()]
         public void bubble_sort_lower_bound_test()
         {
@@ -264,7 +331,7 @@ namespace testing_sort
         }
 
         [TestMethod()]
-        public void bubble_sort_3_exact_test()
+        public void bubble_sort_4_exact_test()
         {
             scrambled.Add(em5);
             scrambled.Add(em5);
