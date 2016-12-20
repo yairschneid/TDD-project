@@ -17,6 +17,7 @@ namespace WindowsFormsApplication1
         List<Employee2> employees;
         List<Employee2> sorted;
         Stopwatch stopwatch;
+        Boolean isSorted;
 
         const int EMPLOYEE_NUMBER = 10000;
 
@@ -25,6 +26,7 @@ namespace WindowsFormsApplication1
             InitializeComponent();
             employees = new List<Employee2>();
             stopwatch = new Stopwatch();
+            isSorted = false;
 
         }
 
@@ -61,6 +63,7 @@ namespace WindowsFormsApplication1
 
             }
             stopwatch.Stop();
+            isSorted = false;
             employees_to_grid(employees);
             
             timer_lb.Text = "time to create employees list: " + stopwatch.Elapsed.TotalMilliseconds + " ms";
@@ -68,6 +71,11 @@ namespace WindowsFormsApplication1
 
         public void sort_bubble_bt_Click(object sender, EventArgs e)
         {
+            if (isSorted)
+            {
+                MessageBox.Show("List already sorted.\n" + "consider creating new list, or reverting to the unsorted one.");
+                return;
+            }
             if (employees.Count == 0)
             {
                 MessageBox.Show("please fill employee table first");
@@ -76,6 +84,7 @@ namespace WindowsFormsApplication1
             stopwatch.Reset();
             stopwatch.Start();
             sorted = myBubbleSort(new List<Employee2>(employees));
+            isSorted = true;
             stopwatch.Stop();
 
             employees_to_grid(sorted);
@@ -144,6 +153,11 @@ namespace WindowsFormsApplication1
 
         private void button2_Click(object sender, EventArgs e)
         {
+            if (isSorted)
+            {
+                MessageBox.Show("List already sorted.\n" + "consider creating new list, or reverting to the unsorted one.");
+                return;
+            }
             if (employees.Count == 0)
             {
                 MessageBox.Show("please fill employee table first");
@@ -152,6 +166,7 @@ namespace WindowsFormsApplication1
             stopwatch.Reset();
             stopwatch.Start();
             sorted = myMergeSort(new List<Employee2>(employees) );
+            isSorted = true;
             stopwatch.Stop();
 
             employees_to_grid(sorted);
@@ -322,6 +337,7 @@ namespace WindowsFormsApplication1
                 return;
             }
             employees_to_grid(employees);
+            isSorted = false;
         }
         
     }
