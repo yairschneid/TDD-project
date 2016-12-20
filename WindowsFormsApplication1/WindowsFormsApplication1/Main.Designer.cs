@@ -33,11 +33,12 @@
             this.firstName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lastName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.salary = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
+            this.create_bt = new System.Windows.Forms.Button();
             this.exit_bt = new System.Windows.Forms.Button();
             this.sort_bubble_bt = new System.Windows.Forms.Button();
             this.timer_lb = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
+            this.revert_bt = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,15 +85,15 @@
             this.salary.Name = "salary";
             this.salary.ReadOnly = true;
             // 
-            // button1
+            // create_bt
             // 
-            this.button1.Location = new System.Drawing.Point(76, 29);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(115, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Create Table";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.create_bt.Location = new System.Drawing.Point(76, 29);
+            this.create_bt.Name = "create_bt";
+            this.create_bt.Size = new System.Drawing.Size(115, 23);
+            this.create_bt.TabIndex = 1;
+            this.create_bt.Text = "Create Table";
+            this.create_bt.UseVisualStyleBackColor = true;
+            this.create_bt.Click += new System.EventHandler(this.button1_Click);
             // 
             // exit_bt
             // 
@@ -133,16 +134,27 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // revert_bt
+            // 
+            this.revert_bt.Location = new System.Drawing.Point(604, 29);
+            this.revert_bt.Name = "revert_bt";
+            this.revert_bt.Size = new System.Drawing.Size(126, 23);
+            this.revert_bt.TabIndex = 6;
+            this.revert_bt.Text = "reverted to unsorted";
+            this.revert_bt.UseVisualStyleBackColor = true;
+            this.revert_bt.Click += new System.EventHandler(this.revert_bt_Click);
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(948, 663);
+            this.Controls.Add(this.revert_bt);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.timer_lb);
             this.Controls.Add(this.sort_bubble_bt);
             this.Controls.Add(this.exit_bt);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.create_bt);
             this.Controls.Add(this.dataGridView1);
             this.Name = "Main";
             this.Text = "Main";
@@ -159,11 +171,12 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn firstName;
         private System.Windows.Forms.DataGridViewTextBoxColumn lastName;
         private System.Windows.Forms.DataGridViewTextBoxColumn salary;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button create_bt;
         private System.Windows.Forms.Button exit_bt;
         private System.Windows.Forms.Button sort_bubble_bt;
         private System.Windows.Forms.Label timer_lb;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button revert_bt;
     }
 }
 

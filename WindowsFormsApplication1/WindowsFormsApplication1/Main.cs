@@ -76,7 +76,7 @@ namespace WindowsFormsApplication1
             }
             stopwatch.Reset();
             stopwatch.Start();
-            sorted = myBubbleSort(employees);
+            sorted = myBubbleSort(new List<Employee2>(employees));
             stopwatch.Stop();
 
             employees_to_grid(sorted);
@@ -153,7 +153,7 @@ namespace WindowsFormsApplication1
             }
             stopwatch.Reset();
             stopwatch.Start();
-            sorted = myMergeSort(employees);
+            sorted = myMergeSort(new List<Employee2>(employees) );
             stopwatch.Stop();
 
             employees_to_grid(sorted);
@@ -235,6 +235,16 @@ namespace WindowsFormsApplication1
             }
 
 
+        }
+
+        private void revert_bt_Click(object sender, EventArgs e)
+        {
+            if (employees.Count == 0)
+            {
+                MessageBox.Show("please create employees database first");
+                return;
+            }
+            employees_to_grid(employees);
         }
 
         /* mergeSubLists v1
